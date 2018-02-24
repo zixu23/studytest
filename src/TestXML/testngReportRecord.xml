@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suites>
+    <!-- suite name，此处填写dubbo-->
+    <suite name="online下单全流程线上监控">
+        <listeners>
+            <listener class-name="org.reportng.HTMLReporter" />
+        </listeners>
+        <tests>
+
+           <test name="测试地址库">
+                <classes>
+                    <class name="com.testcase.dubbo.testdatabase" />
+                </classes>
+           </test>
+        </tests>
+    </suite>
+</suites>
