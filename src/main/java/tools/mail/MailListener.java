@@ -56,7 +56,7 @@ public class MailListener {
 
         MailOperation operation = new MailOperation();
         String user = "sunmm@xinguangnet.com";
-        String password = "HK930323smm";
+        String password = "*******";
         String host = "smtp.exmail.qq.com";
         String from = "sunmm@xinguangnet.com";
         String to = "sunmm@xinguangnet.com";// 收件人
