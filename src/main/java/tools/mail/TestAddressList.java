@@ -60,6 +60,4 @@ public class TestAddressList {
         }
         return testAddressList;
     }
-
-
 }

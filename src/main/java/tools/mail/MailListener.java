@@ -1,6 +1,7 @@
 package tools.mail;
 
 import jxl.read.biff.BiffException;
+import org.apache.commons.lang.RandomStringUtils;
 import tools.filetozip.FileToZip;
 
 import javax.mail.MessagingException;
@@ -51,8 +52,29 @@ public class MailListener {
         /*
         发送邮件
          */
-            String filePath = "target/surefire-reports/" + fileName + ".zip";
-            MailUtil mailUtil = new MailUtil();
+        String filePath = "target/surefire-reports/" + fileName + ".zip";
+
+        MailOperation operation = new MailOperation();
+        String user = "sunmm@xinguangnet.com";
+        String password = "HK930323smm";
+        String host = "smtp.exmail.qq.com";
+        String from = "sunmm@xinguangnet.com";
+        String to = "sunmm@xinguangnet.com";// 收件人
+        String subject = "测试报告";
+        //邮箱内容
+        StringBuffer sb = new StringBuffer();
+        //String yzm = RandomUtil.getRandomString(6);
+        String yzm = RandomStringUtils.random(6);
+        sb.append(subject);
+        try {
+            String res = operation.sendMail(user, password, host, from, to,
+                    subject, mailHtml);
+            System.out.println(res);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+            /*MailUtil mailUtil = new MailUtil();
 
             try {
                 mailUtil.sendMail(testAddressList, subject, mailHtml, fileName+ ".zip", filePath);
@@ -60,7 +82,7 @@ public class MailListener {
                 e.printStackTrace();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
-            }
+            }*/
     }
 
 }

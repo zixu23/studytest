@@ -199,10 +199,9 @@ public class HTMLReporter extends AbstractReporter {
             MailListener maillistener = new MailListener();
             maillistener.subject = sulteName;
             maillistener.mailHtml = mailhtml;
-            if(allPassedTestCases <(allPassedTestCases + allfailedTestCases + allSkippedTestCases)) {
+            if(allPassedTestCases <=(allPassedTestCases + allfailedTestCases + allSkippedTestCases)) {
                 maillistener.failMailTest();
             }
-
         } catch (Exception var8) {
             throw new ReportNGException("Failed generating HTML report.", var8);
         }

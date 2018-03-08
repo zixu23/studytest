@@ -1,8 +1,6 @@
-package com.testcase;
+package tools.mail;
 
-import com.testcase.MailAuthenticator;
 import org.apache.commons.lang.RandomStringUtils;
-import org.apache.commons.lang.math.RandomUtils;
 
 import java.util.Date;
 import java.util.Properties;
@@ -20,9 +18,10 @@ import javax.mail.internet.MimeMultipart;
  * @author zhangdi
  *
  */
+
 public class MailOperation {
 
-     /**
+/**
          * 发送邮件
          * @param user 发件人邮箱
          * @param password 授权码（注意不是邮箱登录密码）
@@ -32,8 +31,9 @@ public class MailOperation {
          * @param subject 邮件主题
          * @param content 邮件内容
          * @return success 发送成功 failure 发送失败
-         * @throws Exception
-         */
+         * @throws Exception*/
+
+
         public String sendMail(String user, String password, String host,
                 String from, String to, String subject, String content)
                 throws Exception {
@@ -87,9 +87,7 @@ public class MailOperation {
         StringBuffer sb = new StringBuffer();
         //String yzm = RandomUtil.getRandomString(6);
         String yzm = RandomStringUtils.random(6);
-        sb.append("<!DOCTYPE>"+"<div bgcolor='#f1fcfa'   style='border:1px solid #d9f4ee; font-size:14px; line-height:22px; color:#005aa0;padding-left:1px;padding-top:5px;   padding-bottom:5px;'><span style='font-weight:bold;'>温馨提示：</span>"
-                + "<div style='width:950px;font-family:arial;'>欢迎使用NET微活动，您的注册码为：<br/><h2 style='color:green'>"+yzm+"</h2><br/>本邮件由系统自动发出，请勿回复。<br/>感谢您的使用。<br/>测试</div>"
-                +"</div>");
+        sb.append("11");
         try {
             String res = operation.sendMail(user, password, host, from, to,
                     subject, sb.toString());
